@@ -1,0 +1,16 @@
+﻿  (define (problem BLOCK)
+  (:domain TAZQIA)
+  (:objects
+    Room_Left Room_Right - room
+    A B C D E F - object )
+    
+  (:init  (at Room_Left GRIPPER) (at Room_Left A) (at Room_Left B)(at Room_Left C) (at Room_Left TABLE)(at Room_Right D) (at Room_Right E) (at Room_Right F) (at Room_Right TABLE) 
+     (CLEAR A)(CLEAR C)(CLEAR D)(CLEAR F)(CLEAR TABLE)
+     (ON A B) (ON F E)(ON B TABLE)(ON C TABLE)(ON D TABLE)(ON E TABLE) (HANDEMPTY) )
+  (:goal
+    (and (at Room_Left D) (at Room_Left E) (at Room_Left F)(at Room_Right A) (at Room_Right B) (at Room_Right C)
+     (CLEAR A)(CLEAR D)
+     (ON F TABLE)(ON C TABLE)(ON A B) (ON B C)(ON D E) (ON E F) 
+    )
+  ))
+
